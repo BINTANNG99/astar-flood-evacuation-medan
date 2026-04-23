@@ -1,0 +1,44 @@
+===========================================================================
+         RINGKASAN HASIL SIMULASI RUTE EVAKUASI BANJIR KOTA MEDAN          
+                     Algoritma A* (A-Star) Pathfinding                     
+===========================================================================
+Dibuat oleh : MINDBYTE
+Dataset     : OpenStreetMap (OSMnx) + Simulasi Titik Banjir Historis Medan
+Algoritma   : A* dengan heuristik Haversine Distance
+Skenario    : A (3 titik), B (5 titik), C (8 titik banjir)
+===========================================================================
+
+Skenario A - Banjir Ringan (3 titik)
+  Berhasil: 7/8 | Terkepung: 1/8 | Rata-rata jarak: 4.79 km
+   Kampung Lalang - Medan Sunggal      → Kantor Camat Medan Sungga 0.80 km
+   Brigjend Katamso - Medan Maimun     → Terkepung total
+   Gaperta Ujung - Medan Helvetia      → Kantor Camat Medan Helvet 1.20 km
+   Jalan Pancing - Medan Tembung       → Masjid Raya Al-Mashun     5.52 km
+   Medan Marelan - Kawasan Utara       → Kantor Camat Medan Helvet 7.12 km
+   Terminal Amplas - Medan Amplas      → Masjid Raya Al-Mashun     9.03 km
+   Sei Mati - Medan Maimun             → Masjid Raya Al-Mashun     3.92 km
+   Tanjung Mulia - Medan Deli          → Masjid Raya Al-Mashun     5.97 km
+
+Skenario B - Banjir Sedang (5 titik)
+  Berhasil: 7/8 | Terkepung: 1/8 | Rata-rata jarak: 4.80 km
+   Kampung Lalang - Medan Sunggal      → Kantor Camat Medan Sungga 0.80 km
+   Brigjend Katamso - Medan Maimun     → Terkepung total
+   Gaperta Ujung - Medan Helvetia      → Kantor Camat Medan Helvet 1.20 km
+   Jalan Pancing - Medan Tembung       → Masjid Raya Al-Mashun     5.47 km
+   Medan Marelan - Kawasan Utara       → Kantor Camat Medan Helvet 7.21 km
+   Terminal Amplas - Medan Amplas      → Masjid Raya Al-Mashun     9.03 km
+   Sei Mati - Medan Maimun             → Masjid Raya Al-Mashun     3.92 km
+   Tanjung Mulia - Medan Deli          → Masjid Raya Al-Mashun     5.97 km
+
+Skenario C - Banjir Parah (8 titik)
+  Berhasil: 7/8 | Terkepung: 1/8 | Rata-rata jarak: 5.04 km
+   Kampung Lalang - Medan Sunggal      → Kantor Camat Medan Sungga 0.80 km
+   Brigjend Katamso - Medan Maimun     → Terkepung total
+   Gaperta Ujung - Medan Helvetia      → Kantor Camat Medan Helvet 1.20 km
+   Jalan Pancing - Medan Tembung       → Masjid Raya Al-Mashun     5.47 km
+   Medan Marelan - Kawasan Utara       → Kantor Camat Medan Helvet 7.21 km
+   Terminal Amplas - Medan Amplas      → Masjid Raya Al-Mashun     9.03 km
+   Sei Mati - Medan Maimun             → Masjid Raya Al-Mashun     5.71 km
+   Tanjung Mulia - Medan Deli          → Masjid Raya Al-Mashun     5.86 km
+
+===========================================================================

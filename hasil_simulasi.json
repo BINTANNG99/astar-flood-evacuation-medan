@@ -1,0 +1,176 @@
+{
+  "Skenario A - Banjir Ringan (3 titik)": [
+    {
+      "asal": "Kampung Lalang - Medan Sunggal",
+      "posko": "Kantor Camat Medan Sunggal",
+      "jarak_km": 0.7985916323792709,
+      "jumlah_node": 13,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Brigjend Katamso - Medan Maimun",
+      "posko": null,
+      "jarak_km": null,
+      "jumlah_node": 0,
+      "status": "terkepung"
+    },
+    {
+      "asal": "Gaperta Ujung - Medan Helvetia",
+      "posko": "Kantor Camat Medan Helvetia",
+      "jarak_km": 1.1958618319019687,
+      "jumlah_node": 12,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Jalan Pancing - Medan Tembung",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.517302548590244,
+      "jumlah_node": 79,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Medan Marelan - Kawasan Utara",
+      "posko": "Kantor Camat Medan Helvetia",
+      "jarak_km": 7.124830079831734,
+      "jumlah_node": 82,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Terminal Amplas - Medan Amplas",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 9.032265351119467,
+      "jumlah_node": 140,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Sei Mati - Medan Maimun",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 3.924965291105835,
+      "jumlah_node": 57,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Tanjung Mulia - Medan Deli",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.96718034435524,
+      "jumlah_node": 92,
+      "status": "berhasil"
+    }
+  ],
+  "Skenario B - Banjir Sedang (5 titik)": [
+    {
+      "asal": "Kampung Lalang - Medan Sunggal",
+      "posko": "Kantor Camat Medan Sunggal",
+      "jarak_km": 0.7985916323792709,
+      "jumlah_node": 13,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Brigjend Katamso - Medan Maimun",
+      "posko": null,
+      "jarak_km": null,
+      "jumlah_node": 0,
+      "status": "terkepung"
+    },
+    {
+      "asal": "Gaperta Ujung - Medan Helvetia",
+      "posko": "Kantor Camat Medan Helvetia",
+      "jarak_km": 1.1958618319019687,
+      "jumlah_node": 12,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Jalan Pancing - Medan Tembung",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.468855852269083,
+      "jumlah_node": 78,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Medan Marelan - Kawasan Utara",
+      "posko": "Kantor Camat Medan Helvetia",
+      "jarak_km": 7.211025841528877,
+      "jumlah_node": 78,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Terminal Amplas - Medan Amplas",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 9.032265351119467,
+      "jumlah_node": 140,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Sei Mati - Medan Maimun",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 3.924965291105835,
+      "jumlah_node": 57,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Tanjung Mulia - Medan Deli",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.96718034435524,
+      "jumlah_node": 92,
+      "status": "berhasil"
+    }
+  ],
+  "Skenario C - Banjir Parah (8 titik)": [
+    {
+      "asal": "Kampung Lalang - Medan Sunggal",
+      "posko": "Kantor Camat Medan Sunggal",
+      "jarak_km": 0.7985916323792709,
+      "jumlah_node": 13,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Brigjend Katamso - Medan Maimun",
+      "posko": null,
+      "jarak_km": null,
+      "jumlah_node": 0,
+      "status": "terkepung"
+    },
+    {
+      "asal": "Gaperta Ujung - Medan Helvetia",
+      "posko": "Kantor Camat Medan Helvetia",
+      "jarak_km": 1.1958618319019687,
+      "jumlah_node": 12,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Jalan Pancing - Medan Tembung",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.468855852269083,
+      "jumlah_node": 78,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Medan Marelan - Kawasan Utara",
+      "posko": "Kantor Camat Medan Helvetia",
+      "jarak_km": 7.211025841528877,
+      "jumlah_node": 78,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Terminal Amplas - Medan Amplas",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 9.032265351119467,
+      "jumlah_node": 140,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Sei Mati - Medan Maimun",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.707985792305659,
+      "jumlah_node": 75,
+      "status": "berhasil"
+    },
+    {
+      "asal": "Tanjung Mulia - Medan Deli",
+      "posko": "Masjid Raya Al-Mashun",
+      "jarak_km": 5.859710839741466,
+      "jumlah_node": 92,
+      "status": "berhasil"
+    }
+  ]
+}

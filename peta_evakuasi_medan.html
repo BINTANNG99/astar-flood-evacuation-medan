@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_58f920d1f8eba8d7429c76b1d0123ce1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+     background-color: white; padding: 12px; border-radius: 8px;
+     border: 2px solid grey; font-size: 13px;">
+<b> Legenda</b><br>
+<span style="color:red">●</span> Zona Banjir<br>
+<span style="color:green">●</span> Posko Evakuasi<br>
+<span style="color:blue">─</span> Rute Evakuasi A*<br>
+</div>
+    
+            <div class="folium-map" id="map_58f920d1f8eba8d7429c76b1d0123ce1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_58f920d1f8eba8d7429c76b1d0123ce1 = L.map(
+                "map_58f920d1f8eba8d7429c76b1d0123ce1",
+                {
+                    center: [3.608108, 98.667513],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0ca68005229fc4d4becccbd79a8cc009 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0ca68005229fc4d4becccbd79a8cc009.addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var circle_04fcf0c452df9f95466494bf892553d0 = L.circle(
+                [3.5789, 98.6432],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_04fcf0c452df9f95466494bf892553d0.bindTooltip(
+                `<div>
+                      Zona Banjir: Kampung Lalang - Medan Sunggal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_871a8a25ad55e09b7bc1cd369870c2c7 = L.circle(
+                [3.5953, 98.6789],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_871a8a25ad55e09b7bc1cd369870c2c7.bindTooltip(
+                `<div>
+                      Zona Banjir: Brigjend Katamso - Medan Maimun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d365822e5a75cf8c657e77e005440f35 = L.circle(
+                [3.5612, 98.6521],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_d365822e5a75cf8c657e77e005440f35.bindTooltip(
+                `<div>
+                      Zona Banjir: Gaperta Ujung - Medan Helvetia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e9acd8d89ee15ed8b58045a96a8ab860 = L.circle(
+                [3.5701, 98.7234],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_e9acd8d89ee15ed8b58045a96a8ab860.bindTooltip(
+                `<div>
+                      Zona Banjir: Jalan Pancing - Medan Tembung
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_584e0933bda29188dbe74f48da9a2b0e = L.circle(
+                [3.5234, 98.6678],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_584e0933bda29188dbe74f48da9a2b0e.bindTooltip(
+                `<div>
+                      Zona Banjir: Medan Marelan - Kawasan Utara
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e760fa8204bdb4aff6975d30174f54d8 = L.circle(
+                [3.6312, 98.7012],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_e760fa8204bdb4aff6975d30174f54d8.bindTooltip(
+                `<div>
+                      Zona Banjir: Terminal Amplas - Medan Amplas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_1b195b10d7a1744fac2ee1e9e628c4d2 = L.circle(
+                [3.5987, 98.6812],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_1b195b10d7a1744fac2ee1e9e628c4d2.bindTooltip(
+                `<div>
+                      Zona Banjir: Sei Mati - Medan Maimun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ace61309905239c68f1615c631e0b3d1 = L.circle(
+                [3.5478, 98.7123],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 300, "stroke": true, "weight": 3}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            circle_ace61309905239c68f1615c631e0b3d1.bindTooltip(
+                `<div>
+                      Zona Banjir: Tanjung Mulia - Medan Deli
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a1f64b63ac87cdff941b8bd3fb85f66e = L.marker(
+                [3.5789, 98.6432],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_9d582c910480f3ef81dc2ca4e0bc5acc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a1f64b63ac87cdff941b8bd3fb85f66e.bindTooltip(
+                `<div>
+                      Kampung Lalang - Medan Sunggal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a1f64b63ac87cdff941b8bd3fb85f66e.setIcon(icon_9d582c910480f3ef81dc2ca4e0bc5acc);
+            
+    
+            var marker_e50e1d01dbd4dd849c68488c82e536d0 = L.marker(
+                [3.5953, 98.6789],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_223d6ce4a100fe467b888e8f8e7de864 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_e50e1d01dbd4dd849c68488c82e536d0.bindTooltip(
+                `<div>
+                      Brigjend Katamso - Medan Maimun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e50e1d01dbd4dd849c68488c82e536d0.setIcon(icon_223d6ce4a100fe467b888e8f8e7de864);
+            
+    
+            var marker_7e72795b02b05af8fc233622ba9d5cc0 = L.marker(
+                [3.5612, 98.6521],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_a1e7d6e922e9ca40933b9dcb01dffe95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_7e72795b02b05af8fc233622ba9d5cc0.bindTooltip(
+                `<div>
+                      Gaperta Ujung - Medan Helvetia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e72795b02b05af8fc233622ba9d5cc0.setIcon(icon_a1e7d6e922e9ca40933b9dcb01dffe95);
+            
+    
+            var marker_9243627b9ea0fa60fab9d1baa46bb6da = L.marker(
+                [3.5701, 98.7234],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_232716968f8cc1a9a6c40264e27eb3a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_9243627b9ea0fa60fab9d1baa46bb6da.bindTooltip(
+                `<div>
+                      Jalan Pancing - Medan Tembung
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9243627b9ea0fa60fab9d1baa46bb6da.setIcon(icon_232716968f8cc1a9a6c40264e27eb3a7);
+            
+    
+            var marker_f2ac686f5c913ee62579a09a610d8374 = L.marker(
+                [3.5234, 98.6678],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_2bcf4601ece2a85ad74d3e65e4bec7a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f2ac686f5c913ee62579a09a610d8374.bindTooltip(
+                `<div>
+                      Medan Marelan - Kawasan Utara
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f2ac686f5c913ee62579a09a610d8374.setIcon(icon_2bcf4601ece2a85ad74d3e65e4bec7a0);
+            
+    
+            var marker_bbd6dae780c24cdae19bb7e0a8efb456 = L.marker(
+                [3.6312, 98.7012],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_8d1139411a33f22dff47e37a97d4bbde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_bbd6dae780c24cdae19bb7e0a8efb456.bindTooltip(
+                `<div>
+                      Terminal Amplas - Medan Amplas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bbd6dae780c24cdae19bb7e0a8efb456.setIcon(icon_8d1139411a33f22dff47e37a97d4bbde);
+            
+    
+            var marker_d62f4c60438ad157c1f9a7aa8c024cbe = L.marker(
+                [3.5987, 98.6812],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_c2e10bb55d8d30cb3391bab12a4d19bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d62f4c60438ad157c1f9a7aa8c024cbe.bindTooltip(
+                `<div>
+                      Sei Mati - Medan Maimun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d62f4c60438ad157c1f9a7aa8c024cbe.setIcon(icon_c2e10bb55d8d30cb3391bab12a4d19bc);
+            
+    
+            var marker_2f8e15f6f33beb5d0c6562c4de75e0dd = L.marker(
+                [3.5478, 98.7123],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_6db6f5f0213b33604ddbc52734a1b6bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_2f8e15f6f33beb5d0c6562c4de75e0dd.bindTooltip(
+                `<div>
+                      Tanjung Mulia - Medan Deli
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2f8e15f6f33beb5d0c6562c4de75e0dd.setIcon(icon_6db6f5f0213b33604ddbc52734a1b6bf);
+            
+    
+            var marker_d24496ce4fefefe0a888719c3fa485ef = L.marker(
+                [3.5598, 98.6489],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_f30f4e169ceabc24b4c97f72e43c9682 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_d24496ce4fefefe0a888719c3fa485ef.bindTooltip(
+                `<div>
+                      Posko: Kantor Camat Medan Helvetia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d24496ce4fefefe0a888719c3fa485ef.setIcon(icon_f30f4e169ceabc24b4c97f72e43c9682);
+            
+    
+            var marker_318c3a8f171959adfe2932ef17f4b411 = L.marker(
+                [3.5667, 98.6789],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_ace9dd138e194c89c1576f8cc37bf036 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_318c3a8f171959adfe2932ef17f4b411.bindTooltip(
+                `<div>
+                      Posko: RSU Adam Malik
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_318c3a8f171959adfe2932ef17f4b411.setIcon(icon_ace9dd138e194c89c1576f8cc37bf036);
+            
+    
+            var marker_edff8ffcb9b0206e3b1d49c81558139d = L.marker(
+                [3.5812, 98.6401],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_5fe284218d4d4124d8e7f5815ab3dc98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_edff8ffcb9b0206e3b1d49c81558139d.bindTooltip(
+                `<div>
+                      Posko: Kantor Camat Medan Sunggal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_edff8ffcb9b0206e3b1d49c81558139d.setIcon(icon_5fe284218d4d4124d8e7f5815ab3dc98);
+            
+    
+            var marker_a74cf1a7cfa8e08cb73d7750fba95067 = L.marker(
+                [3.5756, 98.6803],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_ff96ca1e905605c7ed703aeeb182cd47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a74cf1a7cfa8e08cb73d7750fba95067.bindTooltip(
+                `<div>
+                      Posko: Masjid Raya Al-Mashun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a74cf1a7cfa8e08cb73d7750fba95067.setIcon(icon_ff96ca1e905605c7ed703aeeb182cd47);
+            
+    
+            var marker_75d1636bff726df62bc36acef69eb1b2 = L.marker(
+                [3.5934, 98.6756],
+                {
+}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            var icon_fbf5ef0a92f2fc66c68e8a02d20b8d5f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_75d1636bff726df62bc36acef69eb1b2.bindTooltip(
+                `<div>
+                      Posko: Kantor Camat Medan Maimun
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_75d1636bff726df62bc36acef69eb1b2.setIcon(icon_fbf5ef0a92f2fc66c68e8a02d20b8d5f);
+            
+    
+            var poly_line_cf655934891a08c2e349c2ac7f330e18 = L.polyline(
+                [[3.5815029, 98.6431819], [3.5834261, 98.6427855], [3.5835516, 98.6425601], [3.584171, 98.6414422], [3.5841274, 98.6412021], [3.5833687, 98.6410474], [3.5827203, 98.6408929], [3.582548, 98.6408029], [3.5823661, 98.6407042], [3.5821862, 98.6405613], [3.581687, 98.6405546], [3.5813356, 98.6405198], [3.5810157, 98.6404889]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_cf655934891a08c2e349c2ac7f330e18.bindTooltip(
+                `<div>
+                      Rute: Kampung Lalang - Medan Sunggal → Kantor Camat Medan Sunggal (0.80 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3b106149344144d98d9145fa3dcd73bc = L.polyline(
+                [[3.5590473, 98.6519475], [3.5556463, 98.6519338], [3.5556565, 98.6514976], [3.5556599, 98.6511064], [3.5590496, 98.6508665], [3.5590487, 98.6501897], [3.5590582, 98.6500212], [3.5590606, 98.649817], [3.5590531, 98.6494575], [3.5590582, 98.6489922], [3.5590592, 98.6488315], [3.56003, 98.6488259]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_3b106149344144d98d9145fa3dcd73bc.bindTooltip(
+                `<div>
+                      Rute: Gaperta Ujung - Medan Helvetia → Kantor Camat Medan Helvetia (1.20 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4b358f2b1e8d82eaf26081f3290a2a8b = L.polyline(
+                [[3.5692591, 98.7228534], [3.5681139, 98.7213367], [3.5680543, 98.7213329], [3.5680678, 98.7207714], [3.5680987, 98.7207043], [3.5681296, 98.7198015], [3.568131, 98.7194008], [3.5681495, 98.718591], [3.5681543, 98.7183787], [3.5681621, 98.7180379], [3.5681715, 98.7176239], [3.5681836, 98.7172329], [3.5682003, 98.7168808], [3.5682026, 98.7167823], [3.568211, 98.7164226], [3.5682185, 98.7161776], [3.5682311, 98.7157021], [3.5682344, 98.7153272], [3.5682364, 98.7151965], [3.5682733, 98.714536], [3.5682827, 98.7142709], [3.5682978, 98.713289], [3.5683139, 98.7126077], [3.5683699, 98.7105502], [3.5683817, 98.7101291], [3.5683829, 98.7100393], [3.568387, 98.7097309], [3.5683962, 98.7090367], [3.5683968, 98.7089898], [3.5684006, 98.7087059], [3.5684062, 98.7082809], [3.5684174, 98.7074375], [3.5684245, 98.7069011], [3.5684392, 98.7064974], [3.5684432, 98.7062278], [3.5684593, 98.7056096], [3.568464, 98.7055057], [3.5684793, 98.7048076], [3.5684884, 98.704202], [3.5684934, 98.7036175], [3.5685048, 98.7031116], [3.568507, 98.7030084], [3.568518, 98.702291], [3.5685533, 98.7004423], [3.5685524, 98.7002617], [3.5685642, 98.699828], [3.5685932, 98.6987973], [3.5686065, 98.6979559], [3.5686184, 98.697162], [3.5686405, 98.6960886], [3.5686459, 98.6957155], [3.5686765, 98.6943087], [3.5686971, 98.6931355], [3.5687065, 98.6923664], [3.5686921, 98.6911635], [3.5686692, 98.691052], [3.5699697, 98.6904591], [3.5710254, 98.6899759], [3.5724227, 98.6893038], [3.5724572, 98.6882964], [3.5724534, 98.6873089], [3.5724226, 98.6859987], [3.5724067, 98.6857161], [3.5724014, 98.6856111], [3.5723902, 98.6854197], [3.5723407, 98.6838177], [3.5722641, 98.6816015], [3.5722394, 98.6815149], [3.5724266, 98.6814194], [3.5724592, 98.6814476], [3.572792, 98.6813748], [3.5731106, 98.6809003], [3.5734326, 98.6811967], [3.5752335, 98.679914], [3.5753419, 98.6800022], [3.5753751, 98.6799861], [3.5754187, 98.6801497], [3.5754938, 98.6804382]],
+                {"bubblingMouseEvents": true, "color": "darkblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_4b358f2b1e8d82eaf26081f3290a2a8b.bindTooltip(
+                `<div>
+                      Rute: Jalan Pancing - Medan Tembung → Masjid Raya Al-Mashun (5.47 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fe77dad14702a5ea84ed56923afa9371 = L.polyline(
+                [[3.5248284, 98.6671635], [3.5260652, 98.6667471], [3.5260676, 98.6661879], [3.5260681, 98.6659945], [3.5260762, 98.6654642], [3.525844, 98.66537], [3.5258761, 98.6647518], [3.5246825, 98.6646965], [3.5246878, 98.6645007], [3.5246985, 98.6643539], [3.5247186, 98.6639153], [3.5247287, 98.6637765], [3.5247374, 98.6633635], [3.5247628, 98.662937], [3.5247634, 98.6629052], [3.5251901, 98.6629196], [3.525299, 98.6629141], [3.5265672, 98.6628921], [3.5268025, 98.6629116], [3.5282346, 98.6629947], [3.528609, 98.6629997], [3.5295434, 98.6629913], [3.5321978, 98.6630058], [3.5323091, 98.663006], [3.5336886, 98.6629845], [3.5351339, 98.663003], [3.5353073, 98.6629973], [3.5364624, 98.6629819], [3.5373369, 98.6630108], [3.5379433, 98.6629966], [3.5382648, 98.6630092], [3.5385538, 98.6630156], [3.541392, 98.6627944], [3.5413024, 98.6619997], [3.5412082, 98.6609211], [3.5410818, 98.6604762], [3.5409484, 98.6600573], [3.5408477, 98.6596842], [3.5405029, 98.6582418], [3.5405055, 98.6580007], [3.5405116, 98.6577009], [3.540519, 98.6576061], [3.5405282, 98.6549828], [3.5405223, 98.6544283], [3.5405177, 98.6541786], [3.5405145, 98.6540024], [3.5407471, 98.6542122], [3.5409139, 98.6543613], [3.5417544, 98.6551249], [3.5425128, 98.6557593], [3.5446838, 98.6576229], [3.5458229, 98.6586307], [3.5469861, 98.6593247], [3.5489772, 98.6596633], [3.5492834, 98.6596882], [3.5509776, 98.6598203], [3.5520722, 98.6600745], [3.5520747, 98.6594296], [3.5520881, 98.6579896], [3.5527541, 98.6579914], [3.5533306, 98.657993], [3.5539106, 98.6579946], [3.5539443, 98.6561714], [3.5544537, 98.6561771], [3.5544536, 98.6558266], [3.5550347, 98.6558231], [3.5556202, 98.6558248], [3.5556463, 98.6519338], [3.5556565, 98.6514976], [3.5556599, 98.6511064], [3.5590496, 98.6508665], [3.5590487, 98.6501897], [3.5590582, 98.6500212], [3.5590606, 98.649817], [3.5590531, 98.6494575], [3.5590582, 98.6489922], [3.5590592, 98.6488315], [3.56003, 98.6488259]],
+                {"bubblingMouseEvents": true, "color": "cadetblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cadetblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_fe77dad14702a5ea84ed56923afa9371.bindTooltip(
+                `<div>
+                      Rute: Medan Marelan - Kawasan Utara → Kantor Camat Medan Helvetia (7.21 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d41fb0d15c6c6c9251823de0292feacf = L.polyline(
+                [[3.6281573, 98.7034831], [3.6276591, 98.7034412], [3.6275667, 98.7034335], [3.6273318, 98.7077907], [3.6268902, 98.7077706], [3.6258238, 98.7077222], [3.6243963, 98.7076574], [3.6241213, 98.7076449], [3.6240517, 98.7076417], [3.6219192, 98.7075449], [3.6217801, 98.7075386], [3.6213835, 98.7075206], [3.6210013, 98.7075032], [3.6203491, 98.7074736], [3.6199777, 98.7074359], [3.6200415, 98.7061049], [3.6191937, 98.7060781], [3.6188949, 98.7060644], [3.6184457, 98.7060458], [3.6183884, 98.7060434], [3.6181721, 98.7060212], [3.6177267, 98.7059983], [3.6174417, 98.7059941], [3.6167914, 98.7059304], [3.6162754, 98.7059628], [3.615549, 98.7060221], [3.614744, 98.7059906], [3.614615, 98.7059855], [3.6137749, 98.7059526], [3.613811, 98.7048666], [3.6138315, 98.7043196], [3.6128827, 98.7042859], [3.6129522, 98.7028788], [3.6129635, 98.7026311], [3.6129775, 98.7023616], [3.6120107, 98.7023417], [3.6120092, 98.7023923], [3.6111108, 98.7023684], [3.6102061, 98.7023103], [3.6092747, 98.7022769], [3.6092814, 98.7020885], [3.6092811, 98.7019735], [3.6085948, 98.7019135], [3.6082375, 98.7018833], [3.6082375, 98.7017398], [3.6078722, 98.7017349], [3.6075736, 98.7017244], [3.6069589, 98.7016776], [3.6069706, 98.7013917], [3.6058572, 98.7013743], [3.6058741, 98.7009967], [3.6047798, 98.7010181], [3.6036329, 98.7010052], [3.6036369, 98.700909], [3.6029409, 98.700885], [3.60296, 98.7003025], [3.6019168, 98.7002704], [3.6019235, 98.7000911], [3.6019249, 98.7000524], [3.6008393, 98.7000144], [3.6008237, 98.7003567], [3.5995562, 98.7003284], [3.5995505, 98.7004114], [3.5982452, 98.7003659], [3.5982258, 98.7007022], [3.5981639, 98.7007016], [3.5963875, 98.7006324], [3.5958904, 98.7005102], [3.5958433, 98.7004992], [3.5956992, 98.7004652], [3.5952824, 98.7003701], [3.5951237, 98.6998279], [3.5943651, 98.6982234], [3.594198, 98.6979753], [3.5937467, 98.6968751], [3.5935556, 98.6964004], [3.5933923, 98.6959267], [3.5931097, 98.6952438], [3.593029, 98.695055], [3.5926171, 98.6940873], [3.5921125, 98.6941804], [3.5917029, 98.6942421], [3.5912915, 98.6943029], [3.5910007, 98.694349], [3.5906296, 98.6943994], [3.5899795, 98.6944952], [3.5889099, 98.6946529], [3.5884857, 98.6947154], [3.5877879, 98.6948183], [3.5871455, 98.6949396], [3.5870173, 98.6949601], [3.586558, 98.6950333], [3.5864668, 98.6950479], [3.5862207, 98.6943836], [3.5859882, 98.6944248], [3.5859721, 98.6943926], [3.5856322, 98.6935529], [3.5850316, 98.6921614], [3.5849375, 98.6919428], [3.5849105, 98.6918778], [3.5846955, 98.6913556], [3.5846076, 98.6911387], [3.5844946, 98.6908619], [3.5843882, 98.6905973], [3.5843049, 98.6903764], [3.5840959, 98.6898617], [3.5839043, 98.6893749], [3.5836792, 98.6888475], [3.5833412, 98.6873838], [3.5833124, 98.687335], [3.5831249, 98.6868082], [3.5830804, 98.6866968], [3.582932, 98.686253], [3.5826462, 98.6854818], [3.5825423, 98.6852634], [3.5824428, 98.6850022], [3.5823053, 98.6846481], [3.5821073, 98.6841077], [3.5820864, 98.6840613], [3.5819332, 98.6836768], [3.58191, 98.683627], [3.5817704, 98.6833442], [3.5815756, 98.6830152], [3.5812778, 98.6826279], [3.5812358, 98.6825469], [3.5803913, 98.68049], [3.5792801, 98.6806589], [3.5782582, 98.6807048], [3.5780926, 98.6804274], [3.577922, 98.6805074], [3.5774645, 98.6797672], [3.5771501, 98.6798976], [3.5766456, 98.6801134], [3.5765819, 98.680015], [3.5765647, 98.6799752], [3.5763524, 98.6794768], [3.5753639, 98.6798488], [3.5753751, 98.6799861], [3.5754187, 98.6801497], [3.5754938, 98.6804382]],
+                {"bubblingMouseEvents": true, "color": "darkgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_d41fb0d15c6c6c9251823de0292feacf.bindTooltip(
+                `<div>
+                      Rute: Terminal Amplas - Medan Amplas → Masjid Raya Al-Mashun (9.03 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_479b2b746b34a0e5dc7f9eae8337443d = L.polyline(
+                [[3.598614, 98.679442], [3.5980518, 98.6779543], [3.5990021, 98.6776328], [3.5992216, 98.6781679], [3.5995661, 98.6791222], [3.6015117, 98.6784801], [3.6021697, 98.679329], [3.6023182, 98.6796451], [3.6024968, 98.6800984], [3.6029305, 98.6799623], [3.6033414, 98.6811867], [3.6023737, 98.6816856], [3.6017875, 98.6818935], [3.6004718, 98.6824085], [3.600799, 98.683246], [3.6007013, 98.6832836], [3.5993715, 98.6837992], [3.5989192, 98.6842552], [3.5988957, 98.6850612], [3.5988937, 98.6851138], [3.5988918, 98.6852153], [3.5983332, 98.6853009], [3.598021, 98.6860382], [3.5979501, 98.6858699], [3.5974415, 98.684561], [3.5969142, 98.6847634], [3.5960836, 98.6850666], [3.5944239, 98.6856975], [3.593846, 98.6859027], [3.5934937, 98.6860234], [3.5926525, 98.6863285], [3.5921405, 98.6864821], [3.5909405, 98.6869652], [3.5880979, 98.6880724], [3.5876878, 98.6882422], [3.5874271, 98.6883308], [3.5870844, 98.6884414], [3.5866265, 98.6873182], [3.5864525, 98.6868119], [3.5857464, 98.6869131], [3.5856844, 98.6866314], [3.5856283, 98.6863758], [3.5855912, 98.6862501], [3.5855018, 98.6858719], [3.5845835, 98.6862065], [3.5838767, 98.6864781], [3.583688, 98.6859503], [3.582932, 98.686253], [3.5826462, 98.6854818], [3.5825423, 98.6852634], [3.5824428, 98.6850022], [3.5823053, 98.6846481], [3.5821073, 98.6841077], [3.5820864, 98.6840613], [3.5819332, 98.6836768], [3.58191, 98.683627], [3.5817704, 98.6833442], [3.5815756, 98.6830152], [3.5812778, 98.6826279], [3.5812358, 98.6825469], [3.5803913, 98.68049], [3.5792801, 98.6806589], [3.5782582, 98.6807048], [3.5780926, 98.6804274], [3.577922, 98.6805074], [3.5774645, 98.6797672], [3.5771501, 98.6798976], [3.5766456, 98.6801134], [3.5765819, 98.680015], [3.5765647, 98.6799752], [3.5763524, 98.6794768], [3.5753639, 98.6798488], [3.5753751, 98.6799861], [3.5754187, 98.6801497], [3.5754938, 98.6804382]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_479b2b746b34a0e5dc7f9eae8337443d.bindTooltip(
+                `<div>
+                      Rute: Sei Mati - Medan Maimun → Masjid Raya Al-Mashun (5.71 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_56c475972cd6dfab991d90cf73a1a2b3 = L.polyline(
+                [[3.549429, 98.711565], [3.5513096, 98.7115742], [3.552265, 98.711573], [3.5523158, 98.7107752], [3.5523282, 98.7106051], [3.5523386, 98.7104438], [3.552381, 98.7098327], [3.5523985, 98.7096094], [3.552407, 98.7094612], [3.5524211, 98.7092888], [3.5524435, 98.7088218], [3.552447, 98.7087404], [3.5525126, 98.7075035], [3.5525312, 98.7069031], [3.5525602, 98.7063453], [3.5525931, 98.7056525], [3.552629, 98.7050148], [3.5526536, 98.7046446], [3.5526657, 98.7044124], [3.5527358, 98.7029472], [3.5527561, 98.702484], [3.5535193, 98.7025112], [3.5541056, 98.7025234], [3.5547812, 98.7025319], [3.5554773, 98.7022976], [3.5564069, 98.7022979], [3.5572997, 98.7019225], [3.5573134, 98.7013905], [3.557327, 98.7005309], [3.5573317, 98.7002894], [3.5573293, 98.7001727], [3.5573364, 98.7000515], [3.5573376, 98.6999892], [3.557354, 98.69945], [3.5573567, 98.6992035], [3.5573592, 98.6989926], [3.5574291, 98.6982701], [3.5574283, 98.6982259], [3.558469, 98.6982384], [3.5584756, 98.6979587], [3.558494, 98.6975369], [3.558506, 98.696456], [3.5587477, 98.6963725], [3.5590462, 98.6962906], [3.5595058, 98.6961367], [3.5595629, 98.6960643], [3.5603734, 98.695727], [3.5605072, 98.6956693], [3.5608601, 98.695487], [3.5613023, 98.6953219], [3.5629252, 98.6949327], [3.5629194, 98.6947351], [3.5628973, 98.694335], [3.5628686, 98.6940744], [3.5628055, 98.6930447], [3.5628005, 98.6929206], [3.5628132, 98.6918493], [3.5628241, 98.6913279], [3.56283, 98.6903343], [3.5628393, 98.6898584], [3.5628447, 98.6897753], [3.5633275, 98.6898777], [3.5651485, 98.6893588], [3.5656079, 98.6889944], [3.5666449, 98.6882257], [3.567003, 98.6879465], [3.5673953, 98.6876652], [3.5676914, 98.6874911], [3.568207, 98.6872595], [3.56845, 98.687152], [3.56915, 98.6868198], [3.5692422, 98.6867802], [3.5694459, 98.6866944], [3.5696934, 98.6865819], [3.5700267, 98.6864145], [3.5706856, 98.6861496], [3.5713725, 98.685938], [3.5722519, 98.6856519], [3.5723902, 98.6854197], [3.5723407, 98.6838177], [3.5722641, 98.6816015], [3.5722394, 98.6815149], [3.5724266, 98.6814194], [3.5724592, 98.6814476], [3.572792, 98.6813748], [3.5731106, 98.6809003], [3.5734326, 98.6811967], [3.5752335, 98.679914], [3.5753419, 98.6800022], [3.5753751, 98.6799861], [3.5754187, 98.6801497], [3.5754938, 98.6804382]],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "darkred", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_58f920d1f8eba8d7429c76b1d0123ce1);
+        
+    
+            poly_line_56c475972cd6dfab991d90cf73a1a2b3.bindTooltip(
+                `<div>
+                      Rute: Tanjung Mulia - Medan Deli → Masjid Raya Al-Mashun (5.86 km)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
